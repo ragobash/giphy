@@ -1,14 +1,14 @@
 $(document).ready(function() {
-  // Declaring Initial Array of Topics
-  var topics = ['Peanut Butter', 'Protein', 'Whacky', 'Funny', 'LOL', 'Hmm', 'Muscles', 'Flex', 'I Love You'];
+  // Declaring Initial Array of Topics which is a list of Super Heroes
+  var topics = ['Superman', 'Aquaman', 'Spiderman', 'Batman', 'Wonder Woman', 'Thor', 'Hulk', 'Black Panther', 'Iron Man'];
 
   /// ALL FUNCTIONS
 
   //Function to display info on the topics by calling an API and retrieving the info 
   function displayInfo(){
-    $('#view').empty();
+    $('#hero-view').empty();
     var topic = $(this).attr('data-name');
-    var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + topic + '&api_key=arFqm2h7UJeaYaTfDSwizubTi5kyIHIw&limit=10';
+    var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + topic + '&api_key=jVz8LzEOLKTNPSj1tux4I40dP1PX6Pbg&limit=10';
 
     // AJAX call to GET information 
     $.ajax({
@@ -31,10 +31,12 @@ $(document).ready(function() {
       var results = response.data;
       for (var j = 0; j < results.length; j++){
         // Create new Div
-        var newTopicDiv = $("<div class='gif-name'>");
+        var newTopicDiv = $("<div class='hero-name'>");
         // Save responses from API into variables and add to DOM
         // GIF Rating
         var pRating = $('<p>').text('Rating: ' + results[j].rating.toUpperCase());
+        // GIF Title
+        var pTitle = $('<p>').text('Title: ' + results[j].title.toUpperCase());
         // GIF URL
         var gifURL = results[j].images.fixed_height_still.url;         
         var gif = $('<img>');
@@ -45,9 +47,10 @@ $(document).ready(function() {
         gif.addClass ('animate-gif');
         // Appending info 
         newTopicDiv.append(pRating);
+        newTopicDiv.append(pTitle);
         newTopicDiv.append(gif);
          // Putting the saved info to new div
-        $('#view').prepend(newTopicDiv);
+        $('#hero-view').prepend(newTopicDiv);
       } 
     });
   };
@@ -68,7 +71,7 @@ $(document).ready(function() {
 
   // Function to remove buttons
   function removeButton(){
-    $("#view").empty();
+    $("#hero-view").empty();
     var topic = $(this).attr('data-name');
     var itemindex = topics.indexOf(topic);
     if (itemindex > -1) {
@@ -91,26 +94,26 @@ $(document).ready(function() {
   }
 
   ///EVENT LISTENERS aka CLICK EVENTS
-  // Click on the submit button to add a new button
-  $("#add").on("click", function(event) {
+  // Click on the submit button to add a new hero button
+  $("#add-hero").on("click", function(event) {
     event.preventDefault();
     // capture input from the form
-    var newButton = $("#input").val().trim();
+    var hero = $("#hero-input").val().trim();
     // check if topic exsits already
-    if (topics.toString().toLowerCase().indexOf(newButton.toLowerCase()) != -1) {
+    if (topics.toString().toLowerCase().indexOf(hero.toLowerCase()) != -1) {
       alert("Topic already exists");
     }
     else {
-      topics.push(newButton);
+      topics.push(hero);
       renderButtons();
     }
   });
 
-  // Click on button to display Gifs and other info from API
+  // Click on hero button to display Gifs and other info from API
   $(document).on("click", ".topic", displayInfo);
   // Click on the Gif image to animate or make it still
   $(document).on("click", ".animate-gif", playGif);
-  // Double-click on any button to remove it from the array.
+  // Double-click on any hero button to remove it from the array. Tried this for the first time.
   $(document).on("dblclick", ".topic", removeButton);
 
   // Calling the renderButtons function to display the intial buttons
