@@ -1,0 +1,58 @@
+.container {
+    background-image: url(assets/images/peanutbutter.png);
+}
+
+body {
+    background-color: white;
+    background-image: url("assets/images/peanutbutter.png");
+    font-family: 'Rokkitt', serif;
+    color: black;
+}
+
+.topic {
+    margin: 10px;
+   }
+
+.buttons-view {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+h2 {
+    letter-spacing: 5px;
+    text-align: center;
+    color:black;
+}
+
+h6 {
+    font-style: italic;
+    color: black;
+    text-align: center;
+}
+
+.topic {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.name{
+    margin: 20px;
+    float: left;
+}
+
+p {
+    color:black;
+    margin-top: 20px;
+    line-height: 16px;
+}
+
+img {
+    border-radius: 20px;
+    margin-top: 2px;
+}
+
+.formcontrol {
+    margin-top: 25px;
+}
