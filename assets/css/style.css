@@ -1,40 +1,42 @@
-.container {
-    background-image: url(assets/images/peanutbutter.png);
-}
-
 body {
     background-color: white;
-    background-image: url("assets/images/peanutbutter.png");
-    font-family: 'Rokkitt', serif;
+    font-family: 'Yantramanav', sans-serif;
     color: black;
 }
 
 .topic {
     margin: 10px;
-   }
+    font-size: 16px;
+    font-weight: lighter;
+}
 
 .buttons-view {
-    border-radius: 25px;
-    border: 2px solid black;
     padding: 10px;
     text-align: center;
+}
+
+.btn-info {
+    background-color: antiquewhite;
+    color: #cd9141;
+}
+
+.btn-warning {
+    background-color: antiquewhite;
+    color: #cd9141;
 }
 
 h2 {
     letter-spacing: 5px;
     text-align: center;
     color:black;
+    font-family: 'Mogra', cursive;
 }
 
 h6 {
     font-style: italic;
     color: black;
     text-align: center;
-}
-
-.topic {
-    font-size: 16px;
-    font-weight: lighter;
+    font-family: 'Mogra', cursive;
 }
 
 .name{
@@ -49,10 +51,29 @@ p {
 }
 
 img {
-    border-radius: 20px;
     margin-top: 2px;
 }
 
 .formcontrol {
     margin-top: 25px;
+}
+
+.picture-container {
+    width: 100%;
+    height: 100%;    
+  }
+  
+  #bg-image {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+  }
+
+#header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

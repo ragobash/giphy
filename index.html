@@ -10,15 +10,14 @@
     <!-- My CSS file -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <!-- Link to Google Fonts (Typography) -->
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="favicon.ico" href="assets/images/icon3.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Mogra|Yantramanav&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-        
+
     <div class="container">
-        <h2>Super Hero GIFtastic!</h2>
-        <h6>*Click on a SuperHero Button to see some interesting GIFs. *Add your own SuperHero Button. *Double-Click a Button to delete a SuperHero Button</h6>
+        <img src="assets/images/header.png" id="header" class="center">
+        <h6>*Click on any Button to see some interesting GIFs. *Add your own button. *Double-Click a Button to delete it.</h6>
            
         <!-- Div for Buttons  -->
         <div class = "row">
@@ -28,21 +27,27 @@
         <div class = "row">
             <div class="col-lg-9 container-fluid">
                 <!-- Info from API call will be added here -->
-                <div id="hero-view"></div>
+                <div id="view"></div>
             </div>
             <!-- Div for the form and submit button-->
             <div class="col-lg-3">
-                <form id="hero-form">
-                <label for="hero-input">Add a Super Hero!</label>
-                <input type="text" class="form-control col-12" id="hero-input"><br>
-                <input class="btn btn-warning" id="add-hero" type="submit" value="Submit">
+                <form id="form">
+                <label for="input">Create a button for any word!</label>
+                <input type="text" class="form-control col-12" id="input"><br>
+                <input class="btn btn-warning" id="add-button" type="submit" value="Submit">
                 </form>
             </div>
         </div>
     </div>
 
+    <div class="picture-container">
+        <img src="assets/images/peanutbutter.png" id="bg-image">
+    </div>
+    
+
     <!-- JQuery & Javascript file Links -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 </body>
 </html>
