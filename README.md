@@ -1,5 +1,3 @@
-# Giphy
-
 # "Giphy" Peanut Butter
 No, I don't pronounce it "Jiffy."
 
